@@ -17,4 +17,16 @@ describe("Cell", () => {
     cell.tick();
     expect(cell.active).toBe(true);
   });
+
+  it("should create dead cell with three neighbours and resurrect it after tick", () => {
+    const cell = new Cell(false, 3);
+    cell.tick();
+    expect(cell.active).toBe(true);
+  });
+
+  it("should remain dead with less than two neighbours", () => {
+    const cell = new Cell(false, 1);
+    cell.tick();
+    expect(cell.active).toBe(false);
+  });
 });
