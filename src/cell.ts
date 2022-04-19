@@ -10,4 +10,16 @@ export class Cell {
   get active(): boolean {
     return this._active;
   }
+
+  tick() {
+    if (this._active) {
+      if (this._neighbors < 2 || this._neighbors > 3) {
+        this._active = false;
+      }
+    } else {
+      if (this._neighbors === 3) {
+        this._active = true;
+      }
+    }
+  }
 }
