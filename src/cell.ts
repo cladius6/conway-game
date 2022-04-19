@@ -1,6 +1,6 @@
 export class Cell {
   private _active: boolean;
-  private _neighbors: number;
+  private readonly _neighbors: number;
 
   constructor(active: boolean, neighbors: number) {
     this._active = active;
