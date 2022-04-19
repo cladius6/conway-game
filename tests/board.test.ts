@@ -20,4 +20,18 @@ describe("Board", () => {
       [0, 0, 0],
     ]);
   });
+
+  it("should create a board correctly with few cells", () => {
+    const board = new Board(3, 3);
+    board.board[0][0] = 1;
+    board.board[0][1] = 1;
+    board.board[1][0] = 1;
+    board.board[1][1] = 1;
+    board.tick();
+    expect(board.board).toEqual([
+      [1, 1, 0],
+      [1, 1, 0],
+      [0, 0, 0],
+    ]);
+  });
 });
