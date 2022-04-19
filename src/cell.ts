@@ -21,5 +21,6 @@ export class Cell {
         this._active = true;
       }
     }
+    return this;
   }
 }
